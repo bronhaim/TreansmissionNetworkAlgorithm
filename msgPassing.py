@@ -92,7 +92,7 @@ def calculate_conditionals(setting):
         likelihood = likelihood[0].A1[0]
     else:
         likelihood = likelihood[1].A1[0]
-    print "likelihood for setting %s: %s when starting from source node 4" % (setting, likelihood)
+    print "\n\n@@@ likelihood for setting %s: %s when starting from source node 4" % (setting, likelihood)
 
     # calculating data likelihood by running collect from source node 10
     root = 10
@@ -106,6 +106,7 @@ def calculate_conditionals(setting):
 
     ###############
     # Initialization - Setting 1. Source Node = 1
+    print "\n\n------------------------"
     print "With the likelihood above the following are the results of the conditionals P(xi = {1,0}|setting %d)" % \
           (setting)
     print "[[v=0\nv=1]]"
@@ -133,7 +134,7 @@ def calculate_conditionals(setting):
 
 
 def calculate_assignment(setting):
-    print "Most probable assignment with setting: ", setting
+    print "\n\n@@@ Most probable assignment with setting: ", setting
     ###############
     # Initialization - Setting 1. Source Node = 1
     root = 1
@@ -168,10 +169,13 @@ def calculate_assignment(setting):
     distribute_max(nodes, root, root_argmax)
 
 if __name__ == '__main__':
+    print "================================="
     calculate_conditionals(1)
-    calculate_conditionals(2)
-    calculate_conditionals(3)
-
     calculate_assignment(1)
+    print "================================="
+    calculate_conditionals(2)
     calculate_assignment(2)
+    print "================================="
+    calculate_conditionals(3)
     calculate_assignment(3)
+    print "================================="
